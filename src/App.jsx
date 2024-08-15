@@ -1,9 +1,7 @@
 //? import hooks
 import { useEffect, useReducer } from "react";
-
 //? import router
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
-
 //? import rout pages
 import Layout from "./pages/Layout.jsx";
 import Products from "./pages/Products.jsx";
