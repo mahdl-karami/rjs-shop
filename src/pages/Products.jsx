@@ -1,25 +1,20 @@
-import { useEffect, useState } from "react";
-import pruducts from "../services/products";
+import { useEffect } from "react";
+import products from "../services/products";
 
-function Products() {
-  const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+function Products({ state, dispatch }) {
   useEffect(() => {
-    setLoading(true);
-    pruducts()
+    dispatch({ type: "products_sending" });
+    products()
       .get()
       .then((res) => {
-        setProducts(res.data);
-        console.log(res.data);
-        setLoading(false);
+        dispatch({ type: "products_success", payload: res.data });
       })
-      .catch((error) => setError(error));
+      .catch((error) => dispatch({ type: "error", payload: error }));
   }, []);
   return (
     <div>
-      {products?.map((product) => (
-        <h2>{product.title}</h2>
+      {state?.allProducts?.map((product, index) => (
+        <h2 key={index}>{product.title}</h2>
       ))}
     </div>
   );
