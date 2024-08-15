@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 //? import services
 import products from "../services/products";
+//? import components
+import ProductCard from "../components/ProductCard";
 
 function Products({ state: { allProducts, loading, error }, dispatch }) {
   //! fetch products
@@ -21,7 +23,9 @@ function Products({ state: { allProducts, loading, error }, dispatch }) {
     return (
       <div>
         {allProducts.map((product, index) => (
-          <h2 key={index}>{product.title}</h2>
+          <div key={index}>
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
     );
