@@ -41,7 +41,7 @@ body {
 .product {
   background: var(--secondBg);
   color: var(--secondText);
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -52,7 +52,7 @@ body {
   }
   p {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
   }
   img {
     width: 100%;
