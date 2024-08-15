@@ -24,7 +24,7 @@ function Products({ state: { allProducts, loading, error }, dispatch }) {
       <div className="products">
         {allProducts.map((product, index) => (
           <div key={index} className="product">
-            <ProductCard product={product} />
+            <ProductCard product={product} allProducts={allProducts} index={index} dispatch={dispatch} />
           </div>
         ))}
       </div>

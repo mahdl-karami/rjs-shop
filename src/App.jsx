@@ -17,9 +17,12 @@ const reducer = (state, { type, payload = undefined }) => {
     case "products_sending":
       return { ...state, ["loading"]: true };
     case "products_success":
-      return { ...state, ["allProducts"]: payload, ["loading"]: false, ["error"]: false };
+      const newProducts = payload.map((product) => ({ ...product, ["count"]: 0 }));
+      return { ...state, ["allProducts"]: newProducts, ["loading"]: false, ["error"]: false };
     case "products_error":
       return { ...state, ["error"]: payload };
+    case "products_edit_count":
+      return { ...state, ["allProducts"]: payload };
     default:
       console.log("undefined action");
       return state;
@@ -29,6 +32,7 @@ const reducer = (state, { type, payload = undefined }) => {
 function App() {
   //! reducer
   const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(state);
   //! react router dom
   const router = createBrowserRouter([
     {
