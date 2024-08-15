@@ -21,9 +21,9 @@ function Products({ state: { allProducts, loading, error }, dispatch }) {
   if (error) return <h1>{error}</h1>;
   if (allProducts)
     return (
-      <div>
+      <div className="products">
         {allProducts.map((product, index) => (
-          <div key={index}>
+          <div key={index} className="product">
             <ProductCard product={product} />
           </div>
         ))}

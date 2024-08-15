@@ -4,12 +4,16 @@ function ProductCard({ product }) {
     //! parent div lifted up to products.jsx (render with key)
     <>
       <img src={images[0]} alt="" />
-      <h2>{title}</h2>
-      <p>{price}$</p>
       <div>
+        <h2>{title}</h2>
+        <p>{price}$</p>
+      </div>
+      <div className="product-buttons">
         <button>!</button>
         <div>
-          <button>add</button>
+          <button>-</button>
+          <button>4</button>
+          <button>+</button>
         </div>
       </div>
     </>
