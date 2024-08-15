@@ -1,5 +1,5 @@
 //? import hooks
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 //? import router
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 //? import rout pages
@@ -9,6 +9,7 @@ import Products from "./pages/Products.jsx";
 //? reducer
 const initialState = {
   allProducts: undefined,
+  cartProducts: undefined,
   loading: false,
   error: false,
 };
@@ -23,6 +24,8 @@ const reducer = (state, { type, payload = undefined }) => {
       return { ...state, ["error"]: payload };
     case "products_edit_count":
       return { ...state, ["allProducts"]: payload };
+    case "products_update_cart":
+      return { ...state, ["cartProducts"]: state?.allProducts?.filter((p) => p.count) };
     default:
       console.log("undefined action");
       return state;
@@ -32,7 +35,7 @@ const reducer = (state, { type, payload = undefined }) => {
 function App() {
   //! reducer
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
+  console.log(state.cartProducts)
   //! react router dom
   const router = createBrowserRouter([
     {
