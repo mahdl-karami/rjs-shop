@@ -24,7 +24,7 @@ function ProductCard({ product, allProducts, index, dispatch }) {
       </div>
       <div className="product-buttons">
         <button>
-          <Link to={`${id}`}>
+          <Link to={`/products/${id}`}>
             <TbListDetails />
           </Link>
         </button>
