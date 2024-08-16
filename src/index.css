@@ -133,6 +133,7 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: .5rem 0 0;
   div {
     display: flex;
     button {
@@ -141,10 +142,18 @@ footer {
   }
   button {
     background: transparent;
-    border: 1px solid #ffff;
-    color: var(--mainText);
+    border: 1px solid #ffffff2a;
+    cursor: pointer;
+    color: var(--secondText);
     font-size: 12px;
-    padding: 0.4rem 0.6rem;
+    padding: 0.2rem 0.3rem;
+    svg {
+      font-size: 14px;
+    }
+  }
+  p {
+    width: 15px;
+    text-align: center;
   }
 }
 /* end products */

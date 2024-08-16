@@ -1,7 +1,11 @@
 //? import helpers
 import countHandler from "../helpers/countHandler";
 import shortIt from "../helpers/shortIt";
-
+//? import icons
+import { TbListDetails } from "react-icons/tb";
+import { FiPlus,FiMinus  } from "react-icons/fi";
+import { BiCartAdd } from "react-icons/bi";
+import { RiDeleteBinLine } from "react-icons/ri";
 function ProductCard({ product, allProducts, index, dispatch }) {
   const { title, images, price, count } = product;
   function clickHandler(action) {
@@ -16,14 +20,30 @@ function ProductCard({ product, allProducts, index, dispatch }) {
         <p>{price}$</p>
       </div>
       <div className="product-buttons">
-        <button>!</button>
+        <button>
+          <TbListDetails />
+        </button>
         <div>
-          {count == 0 && <button onClick={() => clickHandler("increase")}>add</button>}
+          {count == 0 && (
+            <button onClick={() => clickHandler("increase")}>
+              <BiCartAdd />
+            </button>
+          )}
           {count > 0 && (
             <>
-              {count == 1 ? <button onClick={() => clickHandler("decrease")}>delete</button> : <button onClick={() => clickHandler("decrease")}>-</button>}
+              {count == 1 ? (
+                <button onClick={() => clickHandler("decrease")}>
+                  <RiDeleteBinLine />
+                </button>
+              ) : (
+                <button onClick={() => clickHandler("decrease")}>
+                  <FiMinus />
+                </button>
+              )}
               <p>{count}</p>
-              <button onClick={() => clickHandler("increase")}>+</button>
+              <button onClick={() => clickHandler("increase")}>
+                <FiPlus />
+              </button>
             </>
           )}
         </div>
