@@ -3,6 +3,7 @@
   --secondText: #c1c3c8;
   --mainBg: #17181c;
   --secondBg: #24292e;
+  --danger: #e01717;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -182,3 +183,28 @@ footer {
   }
 }
 /* end product details */
+
+/* start cart */
+.cart-empty {
+  svg {
+    font-size: 7em;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    color: var(--danger);
+    &:nth-child(1) {
+      color: var(--secondText);
+      opacity: 50%;
+    }
+  }
+  div {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+/* end cart */
