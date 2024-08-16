@@ -8,13 +8,15 @@ import ProductCard from "../components/ProductCard";
 function Products({ state: { allProducts, loading, error }, dispatch }) {
   //! fetch products
   useEffect(() => {
-    dispatch({ type: "products_sending" });
-    products()
-      .get()
-      .then((res) => {
-        dispatch({ type: "products_success", payload: res.data });
-      })
-      .catch((error) => dispatch({ type: "products_error", payload: error }));
+    if (!allProducts) {
+      dispatch({ type: "products_sending" });
+      products()
+        .get()
+        .then((res) => {
+          dispatch({ type: "products_success", payload: res.data });
+        })
+        .catch((error) => dispatch({ type: "products_error", payload: error }));
+    }
   }, []);
   //! jsx
   if (loading) return <h1>loading</h1>;
