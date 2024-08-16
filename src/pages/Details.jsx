@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //? import services
 import config from "../services/config";
+//? import components
+import DetailsImages from "../components/DetailsImages";
 
 function Details() {
   //! states
@@ -28,7 +30,7 @@ function Details() {
     const { title, images, description, price } = product;
     return (
       <div className="product-details">
-        <img src={images[0]} alt="Product image" />
+        <DetailsImages images={images} />
         <span>
           <h1>{title}</h1>
           <p>{description}</p>
