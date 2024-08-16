@@ -7,7 +7,7 @@ function Header() {
   const pathName = useLocation().pathname;
   return (
     <header>
-      {pathName == "/cart" ? (
+      {pathName != "/products" ? (
         <h2>
           <Link className="link" to="/products">
             <FaLongArrowAltLeft />
