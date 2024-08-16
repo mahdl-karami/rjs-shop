@@ -3,11 +3,14 @@ import countHandler from "../helpers/countHandler";
 import shortIt from "../helpers/shortIt";
 //? import icons
 import { TbListDetails } from "react-icons/tb";
-import { FiPlus,FiMinus  } from "react-icons/fi";
+import { FiPlus, FiMinus } from "react-icons/fi";
 import { BiCartAdd } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
+//? react router dom
+import { Link } from "react-router-dom";
+
 function ProductCard({ product, allProducts, index, dispatch }) {
-  const { title, images, price, count } = product;
+  const { title, images, price, count, id } = product;
   function clickHandler(action) {
     countHandler(allProducts, index, action, dispatch);
   }
@@ -21,7 +24,9 @@ function ProductCard({ product, allProducts, index, dispatch }) {
       </div>
       <div className="product-buttons">
         <button>
-          <TbListDetails />
+          <Link to={`${id}`}>
+            <TbListDetails />
+          </Link>
         </button>
         <div>
           {count == 0 && (
