@@ -16,7 +16,6 @@ function Details() {
     config
       .get(`/products/${id}`)
       .then((res) => {
-        console.log(res);
         setProduct(res);
         setLoading(false);
       })
@@ -29,8 +28,8 @@ function Details() {
     const { title, images, description, price } = product;
     return (
       <div className="product-details">
-        <img src={images[0]} alt="" />
-        <span className="text">
+        <img src={images[0]} alt="Product image" />
+        <span>
           <h1>{title}</h1>
           <p>{description}</p>
           <p>{price} $</p>

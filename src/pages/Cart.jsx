@@ -1,11 +1,11 @@
 //? import components
 import ProductCard from "../components/ProductCard";
+import CartStatus from "../components/CartStatus";
 //? import helpers
 import findIndex from "../helpers/findIndex";
 //? import icons
-import { FiShoppingCart } from "react-icons/fi";
-import { FaSlash } from "react-icons/fa";
-import CartStatus from "../components/CartStatus";
+import CartEmptyAlert from "../components/CartEmptyAlert";
+
 function Cart({ state: { allProducts, cartProducts }, dispatch }) {
   return (
     <>
@@ -19,14 +19,7 @@ function Cart({ state: { allProducts, cartProducts }, dispatch }) {
           ))}
         </div>
       ) : (
-        <div className="cart-empty">
-          <FiShoppingCart />
-          <FaSlash />
-          <div>
-            <p>Cart is empty</p>
-            <p>- add some items to cart</p>
-          </div>
-        </div>
+        <CartEmptyAlert />
       )}
     </>
   );
