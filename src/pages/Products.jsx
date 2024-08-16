@@ -5,7 +5,8 @@ import products from "../services/products";
 //? import components
 import ProductCard from "../components/ProductCard";
 
-function Products({ state: { allProducts, loading, error }, dispatch }) {
+function Products({ state, dispatch }) {
+  const { allProducts, loading, error } = state;
   //! fetch products
   useEffect(() => {
     if (!allProducts) {

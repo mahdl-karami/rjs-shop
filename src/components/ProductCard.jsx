@@ -1,3 +1,4 @@
+//? import helpers
 import countHandler from "../helpers/countHandler";
 import shortIt from "../helpers/shortIt";
 
@@ -10,7 +11,7 @@ function ProductCard({ product, allProducts, index, dispatch }) {
     //! parent div lifted up to products.jsx (render with key)
     <>
       <div>
-        <img src={images[0]} alt="product title" />
+        <img src={images[0]} alt="Product Image" />
         <h2>{shortIt(title, 3)}</h2>
         <p>{price}$</p>
       </div>

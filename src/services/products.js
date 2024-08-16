@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const products = () => {
+const products = (limit = 45, offset = 1) => {
   return axios.create({
     baseURL: "https://api.escuelajs.co/api/v1/products",
     params: {
-      limit: 45,
-      offset: 0,
+      limit,
+      offset,
     },
   });
 };

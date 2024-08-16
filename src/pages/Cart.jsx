@@ -1,4 +1,6 @@
+//? import components
 import ProductCard from "../components/ProductCard";
+//? import helpers
 import findIndex from "../helpers/findIndex";
 
 function Cart({ state: { allProducts, cartProducts }, dispatch }) {

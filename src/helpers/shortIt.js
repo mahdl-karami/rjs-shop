@@ -1,6 +1,6 @@
-function shortIt(string, words) {
+function shortIt(string, words_length) {
   const wordList = string.split(" ");
-  wordList.splice(words, wordList.length);
+  wordList.splice(words_length, wordList.length);
   return wordList.join(" ");
 }
 

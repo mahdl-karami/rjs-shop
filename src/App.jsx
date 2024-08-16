@@ -19,6 +19,7 @@ const reducer = (state, { type, payload = undefined }) => {
     case "products_sending":
       return { ...state, ["loading"]: true };
     case "products_success":
+      //! adding count to products
       const newProducts = payload.map((product) => ({ ...product, ["count"]: 0 }));
       return { ...state, ["allProducts"]: newProducts, ["loading"]: false, ["error"]: false };
     case "products_error":
