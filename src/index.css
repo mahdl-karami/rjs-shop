@@ -25,7 +25,9 @@
   box-sizing: border-box;
 }
 body {
+  position: relative;
   width: clamp(1px, 80%, 1200px);
+  min-height: 100vh;
   margin: auto;
 }
 a.link {
@@ -34,6 +36,9 @@ a.link {
   &:hover {
     opacity: 70%;
   }
+}
+main {
+  padding-bottom: 4.5rem;
 }
 /* end global */
 
@@ -95,6 +100,9 @@ header {
   }
 }
 footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   p {
     font-size: 1.1em;
   }
@@ -162,9 +170,15 @@ footer {
 /* end products */
 
 /* start product details */
-.product-details{
-  img{
-    width: 100%;
+.product-details {
+  display: flex;
+  align-items: start;
+  gap: 7px;
+  img {
+    width: 40%;
+  }
+  p {
+    color: var(--secondText);
   }
 }
 /* end product details */

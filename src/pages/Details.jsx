@@ -16,25 +16,27 @@ function Details() {
     config
       .get(`/products/${id}`)
       .then((res) => {
-        console.log(res)
+        console.log(res);
         setProduct(res);
         setLoading(false);
       })
       .catch((err) => setError(err?.message));
   }, []);
   //! jsx
-  if (loading) return <h1>loading</h1>
-  if (error) return <h1>{error}</h1> 
+  if (loading) return <h1>loading</h1>;
+  if (error) return <h1>{error}</h1>;
   if (product) {
-    const {title , images,description, price} = product;
-    return(
+    const { title, images, description, price } = product;
+    return (
       <div className="product-details">
-          <img src={images[0]} alt="" />
+        <img src={images[0]} alt="" />
+        <span className="text">
           <h1>{title}</h1>
           <p>{description}</p>
           <p>{price} $</p>
+        </span>
       </div>
-    )
+    );
   }
 }
 
