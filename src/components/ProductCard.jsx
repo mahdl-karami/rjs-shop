@@ -23,11 +23,11 @@ function ProductCard({ product, allProducts, index, dispatch }) {
         <p>{price}$</p>
       </div>
       <div className="product-buttons">
-        <button>
-          <Link to={`/products/${id}`}>
+        <Link to={`/products/${id}`}>
+          <button>
             <TbListDetails />
-          </Link>
-        </button>
+          </button>
+        </Link>
         <div>
           {count == 0 && (
             <button onClick={() => clickHandler("increase")}>
