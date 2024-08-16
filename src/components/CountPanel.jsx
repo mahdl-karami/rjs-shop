@@ -13,7 +13,7 @@ function CountPanel({ allProducts, dispatch, product }) {
     countHandler(allProducts, index, action, dispatch);
   }
   return (
-    <div>
+    <div className="count-panel">
       {count == 0 && (
         <button onClick={() => clickHandler("increase")}>
           <BiCartAdd />

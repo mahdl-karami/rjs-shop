@@ -5,13 +5,15 @@ import { useParams } from "react-router-dom";
 import config from "../services/config";
 //? import components
 import DetailsImages from "../components/DetailsImages";
+import CountPanel from "../components/CountPanel";
 
-function Details() {
+function Details({ state: { allProducts }, dispatch }) {
   //! states
   const [product, setProduct] = useState(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const id = useParams().productId;
+  const countedProduct = allProducts.filter((p) => p.id == id)[0];
   //! fetch product details
   useEffect(() => {
     setLoading(true);
@@ -35,6 +37,7 @@ function Details() {
           <h1>{title}</h1>
           <p>{description}</p>
           <p>{price} $</p>
+          <CountPanel allProducts={allProducts} product={countedProduct} dispatch={dispatch} />
         </span>
       </div>
     );

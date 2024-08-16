@@ -29,7 +29,7 @@ function App() {
         },
         {
           path: "products/:productId",
-          element: <Details />,
+          element: <Details state={state} dispatch={dispatch} />,
         },
         {
           path: "cart",

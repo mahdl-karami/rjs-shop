@@ -140,11 +140,33 @@ footer {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0 0;
-  div {
-    display: flex;
-    button {
-      margin-left: 0.2rem;
+  button {
+    background: transparent;
+    border: 1px solid #ffffff2a;
+    cursor: pointer;
+    color: var(--secondText);
+    font-size: 12px;
+    padding: 0.2rem 0.3rem;
+    svg {
+      font-size: 14px;
     }
+  }
+
+  a {
+    color: var(--secondText);
+  }
+}
+/* end products */
+
+/* start count panel */
+.count-panel {
+  display: flex;
+  button {
+    margin-left: 0.2rem;
+  }
+  p {
+    width: 15px;
+    text-align: center;
   }
   button {
     background: transparent;
@@ -157,15 +179,8 @@ footer {
       font-size: 14px;
     }
   }
-  p {
-    width: 15px;
-    text-align: center;
-  }
-  a {
-    color: var(--secondText);
-  }
 }
-/* end products */
+/* emd count panel */
 
 /* start product details */
 .product-details {
