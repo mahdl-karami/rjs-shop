@@ -1,9 +1,14 @@
-import React from 'react'
-
 function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      <p>
+        Project Files :{" "}
+        <a href="https://github.com/mahdl-karami/rjs-shop" className="link" target="_blank">
+          GitHub
+        </a>
+      </p>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

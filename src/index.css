@@ -28,7 +28,78 @@ body {
   width: clamp(1px, 80%, 1200px);
   margin: auto;
 }
+a.link {
+  color: var(--mainText);
+  transition: all linear 0.3s;
+  &:hover {
+    opacity: 70%;
+  }
+}
 /* end global */
+
+/* start layout */
+header,
+footer {
+  padding: 1rem 0.5rem;
+  background: var(--secondBg);
+  margin: 7px 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  input {
+    background: var(--mainBg);
+    border: none;
+    outline: 0;
+    padding: 0.4rem 1rem;
+    font-size: 0.9em;
+    color: var(--mainText);
+    margin-right: 0.5rem;
+    &::placeholder {
+      color: var(--secondText);
+    }
+  }
+  select {
+    border: none;
+    outline: none;
+    padding: 0.4rem 1rem;
+    font-size: 0.9em;
+    background: var(--mainBg);
+    color: var(--mainText);
+    text-transform: capitalize;
+  }
+  h2 > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+.cart-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--mainText);
+  padding: 0.2rem 0.3rem;
+  svg {
+    font-size: 2em;
+  }
+  span {
+    position: absolute;
+    background: var(--mainBg);
+    border-radius: 50%;
+    font-size: 0.8em;
+    padding: 0.2rem;
+    right: -5px;
+    top: -7px;
+  }
+}
+footer {
+  p {
+    font-size: 1.1em;
+  }
+}
+/* end layout */
 
 /* start products */
 .products {
@@ -65,7 +136,7 @@ body {
   div {
     display: flex;
     button {
-      margin-left: .2rem;
+      margin-left: 0.2rem;
     }
   }
   button {

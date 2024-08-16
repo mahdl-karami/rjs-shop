@@ -37,7 +37,6 @@ const reducer = (state, { type, payload = undefined }) => {
 function App() {
   //! reducer
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state.cartProducts);
   //! react router dom
   const router = createBrowserRouter([
     {
