@@ -18,7 +18,7 @@ function Products({ state: { allProducts, loading, error }, dispatch }) {
   }, []);
   //! jsx
   if (loading) return <h1>loading</h1>;
-  if (error) return <h1>{error}</h1>;
+  if (error) return <h1>{error.message}</h1>;
   if (allProducts)
     return (
       <div className="products">

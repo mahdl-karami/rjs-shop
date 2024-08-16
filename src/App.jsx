@@ -22,7 +22,7 @@ const reducer = (state, { type, payload = undefined }) => {
       const newProducts = payload.map((product) => ({ ...product, ["count"]: 0 }));
       return { ...state, ["allProducts"]: newProducts, ["loading"]: false, ["error"]: false };
     case "products_error":
-      return { ...state, ["error"]: payload };
+      return { ...state, ["error"]: payload, ["loading"]: false };
     case "products_edit_count":
       return { ...state, ["allProducts"]: payload };
     case "products_update_cart":
