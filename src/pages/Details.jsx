@@ -6,6 +6,8 @@ import config from "../services/config";
 //? import components
 import DetailsImages from "../components/DetailsImages";
 import CountPanel from "../components/CountPanel";
+//? react router dom
+import { Link } from "react-router-dom";
 
 function Details({ state: { allProducts }, dispatch }) {
   //! states
@@ -13,7 +15,7 @@ function Details({ state: { allProducts }, dispatch }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const id = useParams().productId;
-  const countedProduct = allProducts.filter((p) => p.id == id)[0];
+  const countedProduct = allProducts?.filter((p) => p.id == id)[0];
   //! fetch product details
   useEffect(() => {
     setLoading(true);
@@ -28,6 +30,12 @@ function Details({ state: { allProducts }, dispatch }) {
   //! jsx
   if (loading) return <h1>loading</h1>;
   if (error) return <h1>{error}</h1>;
+  if (!allProducts)
+    return (
+      <p>
+        - First go to <Link to="/products">Products</Link> for fetching data.
+      </p>
+    );
   if (product) {
     const { title, images, description, price } = product;
     return (
