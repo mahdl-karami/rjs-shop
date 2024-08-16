@@ -14,7 +14,7 @@ function Cart({ state: { allProducts, cartProducts }, dispatch }) {
         <div className="products">
           {cartProducts?.map((product, key) => (
             <div key={key} className="product">
-              <ProductCard product={product} allProducts={allProducts} index={findIndex(allProducts, product)} dispatch={dispatch} />
+              <ProductCard product={product} allProducts={allProducts} dispatch={dispatch} />
             </div>
           ))}
         </div>

@@ -27,7 +27,7 @@ function Products({ state, dispatch }) {
       <div className="products">
         {allProducts.map((product, index) => (
           <div key={index} className="product">
-            <ProductCard product={product} allProducts={allProducts} index={index} dispatch={dispatch} />
+            <ProductCard product={product} allProducts={allProducts} dispatch={dispatch} />
           </div>
         ))}
       </div>
