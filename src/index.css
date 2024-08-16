@@ -22,7 +22,7 @@
 }
 body {
   position: relative;
-  width: clamp(1px, 80%, 1200px);
+  width: clamp(1px, 90%, 1200px);
   min-height: 100vh;
   margin: auto;
 }
