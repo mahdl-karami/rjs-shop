@@ -5,9 +5,11 @@ import findIndex from "../helpers/findIndex";
 //? import icons
 import { FiShoppingCart } from "react-icons/fi";
 import { FaSlash } from "react-icons/fa";
+import CartStatus from "../components/CartStatus";
 function Cart({ state: { allProducts, cartProducts }, dispatch }) {
   return (
     <>
+      <CartStatus cartProducts={cartProducts} />
       {cartProducts && cartProducts.length ? (
         <div className="products">
           {cartProducts?.map((product, key) => (

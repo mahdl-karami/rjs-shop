@@ -4,6 +4,7 @@
   --mainBg: #17181c;
   --secondBg: #24292e;
   --danger: #e01717;
+  --success: #01cd01;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -208,5 +209,15 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+.cart-status{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondBg);
+  margin-bottom: .5rem;
+  padding: 1rem 0.5rem;
+
 }
 /* end cart */
