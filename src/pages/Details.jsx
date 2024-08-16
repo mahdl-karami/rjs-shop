@@ -36,7 +36,9 @@ function Details({ state: { allProducts }, dispatch }) {
         <span>
           <h1>{title}</h1>
           <p>{description}</p>
+          <br />
           <p>{price} $</p>
+          <br />
           <CountPanel allProducts={allProducts} product={countedProduct} dispatch={dispatch} />
         </span>
       </div>
