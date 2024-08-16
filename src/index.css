@@ -91,6 +91,8 @@ header {
     font-size: 2em;
   }
   span {
+    width: 20px;
+    height: 20px;
     position: absolute;
     background: var(--mainBg);
     border-radius: 50%;

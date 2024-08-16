@@ -3,8 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 //? import icons
 import { BsCart2 } from "react-icons/bs";
 import { FaLongArrowAltLeft } from "react-icons/fa";
-function Header() {
+//? import helpers
+import cartTotal from "../helpers/cartTotal";
+
+function Header({ cartProducts }) {
   const pathName = useLocation().pathname;
+  const { totalCount } = cartTotal(cartProducts);
   return (
     <header>
       {pathName != "/products" ? (
@@ -28,7 +32,7 @@ function Header() {
         <Link to="/cart" className="link">
           <BsCart2 />
         </Link>
-        <span>10</span>
+        {totalCount ? <span>{totalCount}</span> : null}
       </button>
     </header>
   );

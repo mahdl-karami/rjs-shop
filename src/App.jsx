@@ -42,7 +42,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: <Layout cartProducts={state.cartProducts} />,
       children: [
         {
           path: "/",
