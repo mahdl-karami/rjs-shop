@@ -6,10 +6,10 @@ import products from "../services/products";
 import ProductCard from "../components/ProductCard";
 
 function Products({ state, dispatch }) {
-  const { allProducts, loading, error } = state;
+  const { visibleProducts, loading, error } = state;
   //! fetch products
   useEffect(() => {
-    if (!allProducts) {
+    if (!visibleProducts) {
       dispatch({ type: "products_sending" });
       products()
         .get()
@@ -22,12 +22,12 @@ function Products({ state, dispatch }) {
   //! jsx
   if (loading) return <h1>loading</h1>;
   if (error) return <h1>{error.message}</h1>;
-  if (allProducts)
+  if (visibleProducts)
     return (
       <div className="products">
-        {allProducts.map((product, index) => (
+        {visibleProducts.map((product, index) => (
           <div key={index} className="product">
-            <ProductCard product={product} allProducts={allProducts} dispatch={dispatch} />
+            <ProductCard product={product} allProducts={visibleProducts} dispatch={dispatch} />
           </div>
         ))}
       </div>
